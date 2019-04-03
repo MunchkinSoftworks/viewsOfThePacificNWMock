@@ -1,0 +1,118 @@
+
+//controll the beginign state
+:root {
+    --color-primary: #eb2f64;
+    --color-primary-light: #222222;
+    --color-primary-dark: #000000;
+    --color-background-footer: rgb(34, 34, 32);
+    
+    --color-text-white: #ffffff;
+
+    --color-grey-light-1: #8A8A88;
+    --color-grey-dark-1: #454545;
+    --color-grey-border: #2b2b28;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    //box-sizing: border-box;
+    font-size: 62.5%; //makes 1 rem = 10px;
+    
+    @include respond(phone) {
+        font-size: 45%; 
+    }
+    @include respond(uw-big-desktop) {
+        font-size: 87.5%; // 1rem = 14px
+    }
+    @include respond(big-desktop-4k) {
+        font-size: 100%; //1rem = 16px
+    }
+}
+//------------------ support classes
+.sm-margin-left {
+    margin-left: 2vw;
+}
+.fadeInUp {
+    animation-name: fadeIn-up;
+    animation-duration: 1.2s; 
+    animation-timing-function: ease-out; 
+}      
+.fadeIn-center {
+    animation-name: fadeIn-center;
+    animation-duration: 1.2s; 
+    animation-timing-function: ease-out; 
+}
+.fadeIn-down {
+    animation-name: fadeIn-down;
+    animation-duration: 1.2s;   
+    animation-timing-function: ease-out; 
+    //animation-delay: 1s;
+}
+.waypoint--1,
+.waypoint--2 {
+    opacity: 0;
+    &.fadeIn-center {
+        opacity: 1;
+    }
+}
+
+
+//------------------ grid definitions
+.header {
+    display: grid;
+                            //start name                        //end name  /  start 
+    grid-template-columns:  [marginLeft-start]  2vw             [marginLeft-end geoLocation-start]
+                                                min-content     [geoLocation-end leftBuffer-start]
+                                                1fr             [leftBuffer-end titleContent-start]
+                                                min-content     [titleContent-end rightBuffer-start]
+                                                3fr             [rightBuffer-end socialMedia-start]
+                                                min-content     [socialMedia-end marginRight-start]
+                                                2vw             [marginRight-end]; 
+                                //start name                        //end name  /  start  
+    grid-template-rows:     [marginTop-start]   2vh             [marginTop-end mainTop-start]
+                                                98vh            [mainTop-end];  
+    @include respond(phone) {
+        grid-template-rows:     [marginTop-start]   6rem             [marginTop-end mainTop-start]
+                                                    calc(100vh - 6rem)         [mainTop-end];  
+    }  
+    @include respond(uw-big-desktop-wdith) {
+        grid-template-rows:     [marginTop-start]   5vh             [marginTop-end mainTop-start]
+                                                    95vh            [mainTop-end];  
+    }
+    //background-image: linear-gradient(to right bottom, var(--color-primary-light), var( --color-primary-dark));
+    background-image: radial-gradient(circle at top left, var(--color-primary-light), var( --color-primary-dark) 80%);
+    position: relative;
+    z-index: -2;
+
+}
+.headerIntro {
+    display: grid;
+    grid-template-columns: 1fr minmax(min-content, 2fr) 1fr 1fr;
+    @include respond(phone) {
+        grid-template-columns: .5fr minmax(min-content, 2fr) 1fr .5fr;
+    }
+    grid-template-rows: minmax(40vh, max-content);
+    background-color: var(--color-primary-dark);
+}
+.contentGrid {
+    display: grid;
+    grid-template-columns: 2fr minmax(min-content, 1fr);
+    grid-template-rows: 65rem minmax(min-content, 20vh);
+    @include respond(phone) {
+        grid-template-rows: 80rem minmax(min-content, 20vh); 
+    }
+    background-color: var(--color-primary-dark);
+    overflow: hidden;
+}
+.footer {
+    background-color: var(--color-background-footer);
+    display: grid;
+    grid-template-columns: 1fr minmax(min-content, max-content) 1fr;
+    grid-template-rows: min-content min-content min-content 20vh;
+}

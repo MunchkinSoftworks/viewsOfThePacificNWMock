@@ -1,0 +1,325 @@
+#mountainHeader {
+    background-image: url(../img/snowLakeMountain-GrayscalePNG2.png);
+    background-size: 100%;
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    background-repeat: no-repeat;
+    z-index: 100;
+    background-position: center center;
+    top: 0;
+}
+#treeHeader {
+    background-image: url(../img/treeline-png24Int.png);
+    background-size: 100%;
+    width: 100vw;
+    height: 100vw;
+    top: 200px;
+    position: fixed;
+    background-repeat: no-repeat;
+    z-index: 200;
+    background-position: center center;
+}
+
+#mountainHeader1 {
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    background-repeat: no-repeat;
+    z-index: 100;
+    background-position: center center;
+    top: 0;
+}
+#treeHeader1 {
+    width: 100vw;
+    height: auto;
+    top: 350px;
+    position: fixed;
+    background-repeat: no-repeat;
+    z-index: 200;
+    background-position: center center;
+}
+
+.header{
+    //grid definition is in the _base.scss file 
+    overflow: hidden;
+    &__coordiantes {
+        display: grid;
+        grid-template-rows: min-content;
+        grid-column: geoLocation-start / geoLocation-end;
+        grid-row: mainTop-start / mainTop-end;
+        grid-row-gap: 2rem;
+        @include respond(phone) {
+            margin-top: 3rem;
+            margin-right: 3rem;
+        }
+        @include respond(phone-landscape) {
+            padding-top: 1rem;
+        }
+        &--icon {
+            width: 3vw;
+            height: 3vw;
+            fill:var(--color-grey-light-1);
+            @include respond(big-desktop-4k) {
+                min-width: 5rem; 
+                min-height: 5rem;
+            }
+            @include respond(tablet-landscape) {
+                min-width: 4rem; 
+                min-height: 4rem;
+            }
+        }
+        &--text {
+            color: var( --color-grey-light-1);
+            font-family: 'Open Sans', sans-serif;
+            line-height: 2;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 5px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            justify-self: center;
+            font-size: 1.5rem;
+            @include respond(big-desktop-4k) {
+                font-size: 1.5rem;
+            }
+            @include respond(uw-big-desktop-heightAndWidth) {
+                font-size: 1.5rem;
+            }
+            @include respond(tablet-landscape) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    &__title {
+        grid-column: titleContent-start / titleContent-end;
+        grid-row: mainTop-start / mainTop-end;
+
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr repeat(2, max-content) 2fr;
+        @include respond(phone) {
+            grid-template-rows: 1fr repeat(2, max-content) 8fr;
+        }
+        @include respond(phone-landscape) {
+            margin-left: 3rem;
+        }
+        position: relative;
+        z-index: 10;
+        @include respond(uw-big-desktop-wdith) {
+            margin-bottom: 20rem;
+            margin-right: 20rem;
+        }
+
+        &--h2 {
+            grid-column: 1 / span 1;
+            grid-row: 1 / 2;
+            align-self: end;
+
+            line-height: 2.6;
+        }
+        &--h1 {   
+            font-size: 9rem;
+            line-height: 1;
+            @include respond(phone-landscape) {
+                line-height: 1.4;
+                font-size: 5.8rem;
+            }
+
+            &-cover1 {
+                @include respond(phone-landscape) {
+                    width: 55%;
+                    padding: 0 2rem;
+                    background-color: rgba(0,0,0, 0.8);
+                }
+            }
+            &-cover2 {
+                @include respond(phone-landscape) {
+                    width: 82%;
+                    padding: 0 2rem;
+                    background-color: rgba(0,0,0, 0.8);
+                }
+            }
+        }
+    }
+    &__socialMedia {
+        grid-column: socialMedia-start / socialMedia-end;
+        grid-row: mainTop-start / mainTop-end;
+        @include respond(phone) {
+            grid-column: marginLeft-end / marginRight-start;
+            grid-row: marginTop-start / marginTop-end;
+        }
+        
+        display: grid;
+        grid-template-columns: min-content;
+        grid-row-gap: 1.5vh;
+        align-content: start; // because we are intentionally not defining rows so that we can place as many icons here as needed, we need this line of code to group the icons together at the start otherwise they spread evenly in the parent container/ grid area.
+        @include respond(phone) {
+            grid-template-rows: min-content;
+            grid-template-columns: none;
+            grid-auto-flow: column;
+            grid-column-gap: 1vw;
+            justify-content: space-evenly
+        }
+        @include respond(phone-landscape) {
+            align-content: start;
+            grid-auto-flow: column;
+            grid-column-gap: 2rem;
+        }
+        
+        position: relative; //needed to make z-index work
+        z-index: 10;
+        &--icon {
+            width: 2vw;
+            height: 2vw;
+            @include respond(big-desktop-4k) {
+                min-width: 3.5rem; 
+                min-height: 3.5rem;
+            }
+            @include respond(tablet-landscape) {
+                min-width: 3rem;  
+                min-height: 3rem;
+                padding: 1.5rem 0;
+            }
+            fill:var(--color-grey-light-1);
+            transition: all 0.2s;
+        }
+        &--icon:hover {
+            fill:var( --color-text-white);
+            cursor: pointer;
+        }
+    }
+    &__image {
+        grid-column: 1 / -1;
+        grid-row: mainTop-start / mainTop-end;
+        align-self: end;
+        
+        @include respond(uw-big-desktop-wdith) {
+            justify-self: end;
+            width: 100%;
+        }
+        @include respond(big-desktop-4k) {
+            justify-self: end;
+            width: 100%;
+        }
+
+        overflow: hidden;
+
+    }
+}
+#headerMountain{
+            
+    min-width: 80vw; 
+    min-height: 70vh;
+    max-width: 200vw; 
+    max-height: 80vh;
+    //float: left;
+    object-fit: cover;
+    //filter: grayscale(1);
+    @include respond(uw-big-desktop-wdith) {
+        min-width: none; 
+        min-height: none;
+        max-width: none; 
+        max-height: none;
+        object-fit: contain;
+        float: right;
+    }
+    @include respond(big-desktop-4k) {
+        min-width: none; 
+        min-height: none;
+        max-width: none; 
+        max-height: none;
+        
+        object-fit: cover;
+    }
+
+    position: fixed; //needed to make z-index work
+    z-index: -1;
+    
+}
+#headerTreeline{
+    
+    /*
+    min-width: 30rem; 
+    min-height: 30vh;
+    max-width: 100%; 
+    max-height: 35vh;
+    */
+    width: 100vw;
+    height: 40rem;
+    object-fit: cover;
+
+    position: fixed; //needed to make z-index work
+    z-index: 2000;
+
+    margin-bottom: -1vh; // needed to cover a small white line that was showing up for some reason
+    @include respond(uw-big-desktop-wdith) {
+        min-width: none; 
+        min-height: none;
+        max-width: none; 
+        max-height: none;
+        width: 100%;
+        object-fit: cover;
+        
+    }
+
+}
+#treelineRectangle {
+    background-color: black;
+    height: 21rem;
+    width: 100%;
+}
+.headerIntro {
+    //grid definition is in the _base.scss file 
+    padding: 10rem 0;
+
+    &__text {
+        //grid-column: titleContent-start / titleContent-end;
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1; 
+        @include respond(phone) {
+            grid-column: 2 / span 2;
+            padding-right: 5rem;
+        }
+        text-align: right;
+        
+        display: grid;
+        align-content: center;
+        
+
+
+        border-right: 1px solid var(--color-grey-border);
+        height: 100%;
+        padding-right: 2rem;
+        &--p {
+            color: var(--color-grey-light-1);
+            font-size: 1.7rem;
+            @include respond(phone) {
+                font-size: 2rem;
+            }
+            line-height: 1.8;
+            font-weight: 300;
+        }
+        &--h4 {
+            font-size: 2rem;
+            @include respond(phone) {
+                font-size: 3rem;
+            }
+            margin-top: 2.5rem;
+        }
+    }
+    &__logo {
+        @include respond(phone) {
+            display: none;
+        }
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1; 
+        align-self: center;
+
+        margin-left: 4rem;
+    
+        fill: var(--color-text-white);
+        width: 5rem;
+        height: 5rem;
+    }
+}

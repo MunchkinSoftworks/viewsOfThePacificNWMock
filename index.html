@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        
+        <title>Views of the PNW</title>
+    </head>
+<body>
+    <header class="header">
+        <div class="header__coordiantes fadeIn-down">
+            <svg class="header__coordiantes--icon"> 
+                <use xlink:href="img/logo-light.svg#Layer_1"></use>
+            </svg>
+            <span class="header__coordiantes--text">45.5231&deg; N 122.6765&deg; W </span>
+        </div>
+        <div class="header__title fadeInUp"> 
+            <h2 class="header__title--h2">Welcome to the</h2>
+            <h1 class="header__title--h1 header__title--h1-cover1">Pacific</h1>
+            <h1 class="header__title--h1 sm-margin-left header__title--h1-cover2">Northwest</h1>
+        </div>
+
+        <div class="header__socialMedia fadeIn-down"> 
+            <svg class="header__socialMedia--icon">
+                <use xlink:href="icons/sprite.svg#icon-instagram"></use>
+            </svg>
+            <svg class="header__socialMedia--icon">
+                <use xlink:href="icons/sprite.svg#icon-youtube"></use>
+            </svg>
+            <svg class="header__socialMedia--icon">
+                <use xlink:href="icons/sprite.svg#icon-facebook"></use>
+            </svg>
+            <svg class="header__socialMedia--icon">
+                <use xlink:href="icons/sprite.svg#icon-github"></use>
+            </svg>
+            <svg class="header__socialMedia--icon">
+                <use xlink:href="icons/sprite.svg#icon-whatsapp"></use>
+            </svg>
+            <svg class="header__socialMedia--icon">
+                <use xlink:href="icons/sprite.svg#icon-envelope"></use>
+            </svg>
+        </div>
+        <!--
+        <div id="mountainHeader"></div>
+        <div id="treeHeader"></div>
+        <img id="mountainHeader1" src="img/snowLakeMountain-GrayscalePNG2.png" alt="mountain">
+        <img id="treeHeader1" src="img/treeline-png24Int.png" alt="treeline">
+        -->
+        
+        <img src="img/snowLakeMountain-GrayscalePNG2.png" alt="mountain" id="headerMountain" class="header__image">
+        <img src="img/treeline-png24Int.png" alt="treeline" id="headerTreeline" class="header__image">
+        <div class="header__image" id="treelineRectangle"></div>
+        
+    </header>
+    <div class="headerIntro">
+        <div class="headerIntro__text waypoint--1">
+            <p class="headerIntro__text--p">A landscape photographer’s paradise, the Pacific Northwest is filled with seemingly endless variety and beauty. Views of the Pacific Northwest represents my efforts over the last decade to capture and share this area's staggering natural beauty through high-resolution, panoramic desktop wallpapers.</p>
+            <h4 class="headerIntro__text--h4">Enjoy the view!</h4>
+        </div>
+        <svg class="headerIntro__logo">
+            <use xlink:href="img/logo-light.svg#Layer_1"></use>
+        </svg>
+    </div>
+    <div class="contentGrid">
+        <div class="contentGrid__images waypoint--2">
+            <img src="img/morningColorsJPEGMedium.jpg" alt="image-1" class="contentGrid__image">
+        </div>
+        <svg class="contentGrid__DownloadIcon">
+            <use xlink:href="icons/sprite.svg#icon-cloud-download"></use>
+        </svg>
+        <div class="contentGrid__text">
+            <h3 class="contentGrid__title">Morning Colors</h3>
+            <p class="contentGrid__description">Mt. Hood and the Hood River Valley light up with vibrant colors during a late-spring sunrise. Looking east(ish) from the Cook-Underwood Road Overlook, Underwood, WA.</p>
+            <div class="contentGrid__specs">
+                <p class="contentGrid__specs--title">ISO</p>
+                <p class="contentGrid__specs--specvalue">100</p>
+                <p class="contentGrid__specs--title">f-stop</p>
+                <p class="contentGrid__specs--specvalue">7.1</p>
+                <p class="contentGrid__specs--title">shutter</p>
+                <p class="contentGrid__specs--specvalue">1/60</p>
+                <p class="contentGrid__specs--title">lens</p>
+                <p class="contentGrid__specs--specvalue">~200mm</p>
+                <p class="contentGrid__specs--title">dimmensions</p>
+                <p class="contentGrid__specs--specvalue">22500 x 7500</p>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__image">
+            <img src="img/treelineFooter-png24Int.png" alt="treeline" class="footer__image--tree">
+        </div>
+        <svg class="footer__icon coordiantes__icon">
+            <use xlink:href="img/logo-light.svg#Layer_1"></use>
+        </svg>
+        <p class="footer__text">views <span class="footer__text--accent">of the</span> pacific northwest</p>
+        <p class="footer__copyright">Copyright © 2019 munchkinsoftworks.com All rights reserved, site based off viewsofthepnw.com</p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/index.js"></script> 
+</body>
+</html>

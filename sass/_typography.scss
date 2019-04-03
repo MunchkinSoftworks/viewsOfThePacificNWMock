@@ -1,0 +1,37 @@
+h1 {
+    color: var(--color-grey-dark-1);
+    font-family: 'Lobster', cursive;
+}
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: var( --color-grey-light-1);
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    @include respond(phone) {
+        font-size: 1.8rem; 
+    }
+}
+h4 {
+    color: var(--color-text-white);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    @include respond(phone) {
+        font-size: 1.7rem; 
+    }
+}
+.contentGrid__description {
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,31 @@
+// the resolution for a 2k Ultra wide monitor is 3440 x 1440
+// the resolution for a 4k monitor is 3840 x 2160
+// the resolution for a 1080p monitor is 1920 x 1080
+// the approach i will take is the assumption of the website designed for a height and width of a 1080p mnitor, then proceed with the min-height and min-width paramenters which mean at least or greater the pixel specified. then a max width parameter to go smaller until phone size is reached. in the future I think a mobile first approach and then git bigger progresively with min-width and min-height is more logical and preferable. 
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content }; //600px
+    }
+    @if $breakpoint == phone-landscape {
+        @media only screen and (max-width: 56.35em) and (max-height: 26em)  { @content }; //900px width 400px height
+    }
+    @if $breakpoint == tablet-portrait {
+        @media only screen and (max-width: 56.35em) { @content }; //900px
+    }
+    @if $breakpoint == tablet-landscape {
+        @media only screen and (max-width: 75em) { @content }; //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (max-width: 112.5em) { @content }; //1800px
+    }
+    @if $breakpoint == uw-big-desktop-wdith {
+        @media only screen and (min-width: 150em) and (max-height: 67.5em) { @content }; //2400px assumes height of 1080px
+    }
+    @if $breakpoint == uw-big-desktop-heightAndWidth {
+        @media only screen and (min-width: 120.07em) and (min-height: 67.75) { @content }; //1921 x 1085
+    }
+    @if $breakpoint == big-desktop-4k {
+        @media only screen and (min-height: 90.125em) { @content }; //1440px height
+    }   
+}

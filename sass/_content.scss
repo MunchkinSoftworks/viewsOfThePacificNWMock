@@ -1,0 +1,76 @@
+.contentGrid {
+    //grid definition is in the _base.scss file 
+
+    &__images {
+        grid-column: 1 / -1;
+        grid-row: 1 / span 1;
+    }
+    &__image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__DownloadIcon {
+        @include respond(phone) {
+           display: none; 
+        }
+        grid-column: 1 / span 1;
+        grid-row: 2 / span 1;
+        justify-self: end;
+        align-self: center;
+
+
+        height: 5rem;
+        width: 5rem;
+        padding-right: 3rem;
+        fill: var(--color-grey-light-1);
+        transition: all 0.2s;
+        &:hover {
+            fill: var(--color-text-white);
+            cursor: pointer;
+        }
+    }
+    &__text {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+        @include respond(phone) {
+            grid-column: 1 /  -1; 
+            margin: 0 3rem;
+         }
+        
+        color: var(--color-grey-light-1);
+        padding-top: 4vh;
+        padding-right: 5vw;
+        padding-left: 2rem;
+
+        border-left: 1px solid var(--color-grey-border);
+        height: 90%;
+    }
+    &__title {
+        color: var(--color-text-white);
+        padding-bottom: 2rem;
+    }
+    &__description {
+        color: var(--color-grey-light-1);
+        padding-bottom: 2rem;
+    }
+    &__specs {
+        margin-bottom: 10rem;
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+
+        display: grid;
+        grid-template-columns: repeat(5, max-content);
+        grid-template-rows: repeat(2, max-content);
+        grid-auto-flow: column;
+        grid-column-gap: 2.3rem;
+        grid-row-gap: 1rem;
+        &--title {
+            color: var(--color-text-white);
+            text-transform: uppercase;
+        }
+        &--specvalue {
+
+        }
+    }
+}
